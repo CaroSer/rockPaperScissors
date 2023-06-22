@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Super\ Bubble;
+    src: local("Super\ Bubble"),
+    local("Super\ Bubble"),
+    url(Super\ Bubble.ttf);
+  }
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #301857;
+}
+.mainText{
+    font-size: 50px;
+    align-self: center;
+    font-family: 'Super\ Bubble',Arial, Helvetica, sans-serif;
+    color:#ffefbc;
+    text-shadow:5px 5px #f1c123;
+}
+
+#selectedChoiceCont{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3%;
+}
+
+.selectedChoice{
+    background-color: #f1c123;
+    border-radius: 100%;
+    height: 350px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selectedChoiceCenter{
+    background-color: #ffefbc;
+    border-radius: 100%;
+    height: 85%;
+    width: 85%;
+}
+
+#choiceOptionCont{
+    align-self: center;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3%;
+}
+
+.choiceOption{
+    background-color: #f1c123;
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.choiceOptionCenter{
+    background-color: #ffefbc;
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choiceOption:hover{
+    background-color: #6c4ca0;
+    height: 155px;
+    width: 155px;
+}
+
+.choiceOptionCenter:hover{
+    background-color: #ac98cc;
+    height: 125px;
+    width: 125px;   
+}
+
+#scores{
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    align-self: center;
+    justify-content: space-between;
+    margin: -150px;
+}
+
+.icon{
+    height: 80px;
+    width: 80px;
+}
