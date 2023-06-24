@@ -1,10 +1,9 @@
 function randomChoice(){
-    let options= ["rock","paper","scissors"]
     let randomChoice= Math.floor(Math.random()*(3.9-1)+1);
     let computerChoice=options[randomChoice]
     return computerChoice
 } 
-
+/*
 function compareChoices(){
     switch(true){
 
@@ -29,9 +28,36 @@ function compareChoices(){
             default: alert("Check your choice and try again.");break;
     }
 }
+*/
 
 var wins=0;
 var loses=0;
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var rock = document.getElementById('rock');
+    var paper = document.getElementById('paper');
+    var scissors = document.getElementById('scissors');
+
+    var options = [rock, paper, scissors];
+
+    var selectedImg = document.getElementById('selectedImg');
+
+    for (let i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', () => {
+        let img = options[i].src;
+        selectedImg.setAttribute('src', img);
+    });
+    }
+});
+
+
+
+
+
+
+/*
 
 while(true){
 if(wins==5){
@@ -54,4 +80,5 @@ var computerChoice=randomChoice()
 var playerChoiceLC=playerChoice.toLowerCase()
 compareChoices()
 }
-}
+}*/
+
