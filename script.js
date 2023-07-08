@@ -1,84 +1,77 @@
-function randomChoice(){
-    let randomChoice= Math.floor(Math.random()*(3.9-1)+1);
-    let computerChoice=options[randomChoice]
-    return computerChoice
-} 
-/*
-function compareChoices(){
-    switch(true){
+// This code keeps track of wins and losses in a rock-paper-scissors game and displays the scores.
 
-        case(playerChoiceLC==computerChoice):
-        alert("It's a tie!");break;
+// Variable declarations
+var wins = 0; // The number of wins
+var loses = 0; // The number of losses
+var options = ['rock', 'paper', 'scissors']; // Available choices 
 
-        case (playerChoiceLC=="rock"):
-            if(computerChoice=="paper"){ alert("You lose! Paper beats rock."); loses++}
-            else{ alert("You win! Rock beats scissors."); wins++;}
-            break;
 
-            case (playerChoiceLC=="paper"):
-            if(computerChoice=="scissors"){ alert("You lose! Scissors beats paper.");loses++}
-            else{ alert("You win! Paper beats rock."); wins++;}
-            break;
+// Generates a random choice from the options array
+function randomChoice() {
+var randomIndex = Math.floor(Math.random() * options.length);
+return options[randomIndex];
+}
 
-            case (playerChoiceLC=="scissors"):
-            if(computerChoice=="rock"){ alert("You lose! Rock beats scissors.");loses++}
-            else{ alert("You win! Scissors beats paper."); wins++;}
-            break;
 
-            default: alert("Check your choice and try again.");break;
+// Compares the player's choice with the computer's choice and displays the result
+function compareChoices(playerChoice) {
+
+
+// Get the selected images from the DOM
+var selectedImg = document.getElementById('selectedImg');
+var selectedImgComputer = document.getElementById('selectedImgComputer');
+
+
+// Set the source of the selected images based on the choices
+selectedImg.src = 'img/' + playerChoice + '.png';
+selectedImgComputer.src = 'img/' + computerChoice + '.png';
+
+
+// Delay the winner alert to allow the images to update
+setTimeout(alertWinner, 100);
+
+
+// Displays the winner or tie based on the choices
+function alertWinner() {
+    if (playerChoice === computerChoice) {
+        alert("It's a tie!");
+    } else if (
+        (playerChoice === 'rock' && computerChoice === 'paper') ||
+        (playerChoice === 'paper' && computerChoice === 'scissors') ||
+        (playerChoice === 'scissors' && computerChoice === 'rock')
+    ) {
+        alert("You lose! " + computerChoice + " beats " + playerChoice + ".");
+        loses++;
+        refreshScores();
+        setTimeout(checkScores, 500);
+    } else {
+        alert("You win! " + playerChoice + " beats " + computerChoice + ".");
+        wins++;
+        refreshScores();
+        setTimeout(checkScores, 500);
     }
 }
-*/
-
-var wins=0;
-var loses=0;
+}
 
 
-document.addEventListener('DOMContentLoaded', function() {
-
-    var rock = document.getElementById('rock');
-    var paper = document.getElementById('paper');
-    var scissors = document.getElementById('scissors');
-
-    var options = [rock, paper, scissors];
-
-    var selectedImg = document.getElementById('selectedImg');
-
-    for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener('click', () => {
-        let img = options[i].src;
-        selectedImg.setAttribute('src', img);
-    });
+// Checks the scores to determine if a player has reached 5 wins or losses
+function checkScores() {
+    if (wins === 5) {
+    alert("You were the first to get 5 wins. You won!");
+    loses = 0;
+    wins = 0;
+    refreshScores();
+    } else if (loses === 5) {
+    alert("Your opponent got 5 wins before you. You lost!");
+    loses = 0;
+    wins = 0;
+    refreshScores();
     }
-});
+    }
+    
 
-
-
-
-
-
-/*
-
-while(true){
-if(wins==5){
-    alert("You were the first to get 5 wins, you won!")
-    wins=0
-    loses=0
-    break;
-}
-
-else if(loses==5){
-    alert("Your opponent got 5 wins before you, you lost!")
-    wins=0
-    loses=0
-    break;
-}
-
-else{
-var playerChoice= prompt("Rock, paper or scissors?")
-var computerChoice=randomChoice() 
-var playerChoiceLC=playerChoice.toLowerCase()
-compareChoices()
-}
-}*/
-
+    // Updates the scores displayed in the DOM
+    function refreshScores() {
+    document.getElementById('playerScore').textContent = wins;
+    document.getElementById('computerScore').textContent = loses;
+    }
