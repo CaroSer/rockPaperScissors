@@ -1,11 +1,15 @@
+/* The code defines CSS styles for a web page. */
+
+/* Define a custom font called Super Bubble */
 @font-face {
     font-family: Super\ Bubble;
     src: local("Super\ Bubble"),
     local("Super\ Bubble"),
     url(Super\ Bubble.ttf);
-  }
+}
 
-body{
+/* Styles for the body element */
+body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -13,15 +17,18 @@ body{
     flex-direction: column;
     background-color: #301857;
 }
-.mainText{
+
+/* Styles for the main text */
+.mainText {
     font-size: 50px;
     align-self: center;
-    font-family: 'Super\ Bubble',Arial, Helvetica, sans-serif;
-    color:#ffefbc;
-    text-shadow:5px 5px #f1c123;
+    font-family: 'Super\ Bubble', Arial, Helvetica, sans-serif;
+    color: #ffefbc;
+    text-shadow: 5px 5px #f1c123;
 }
 
-#selectedChoiceCont{
+/* Styles for the selected choice container */
+#selectedChoiceCont {
     width: 100%;
     display: flex;
     align-items: center;
@@ -29,7 +36,8 @@ body{
     margin-top: 3%;
 }
 
-.selectedChoice{
+/* Styles for the selected choice */
+.selectedChoice {
     background-color: #f1c123;
     border-radius: 100%;
     height: 350px;
@@ -39,14 +47,16 @@ body{
     justify-content: space-evenly;
 }
 
-.selectedChoiceCenter{
+/* Styles for the center of the selected choice */
+.selectedChoiceCenter {
     background-color: #ffefbc;
     border-radius: 100%;
     height: 85%;
     width: 85%;
 }
 
-#choiceOptionCont{
+/* Styles for the choice option container */
+#choiceOptionCont {
     align-self: center;
     width: 50%;
     display: flex;
@@ -55,7 +65,8 @@ body{
     margin-top: 3%;
 }
 
-.choiceOption{
+/* Styles for the choice option */
+.choiceOption {
     background-color: #f1c123;
     border-radius: 100%;
     height: 150px;
@@ -65,7 +76,8 @@ body{
     justify-content: space-evenly;
 }
 
-.choiceOptionCenter{
+/* Styles for the center of the choice option */
+.choiceOptionCenter {
     background-color: #ffefbc;
     border-radius: 100%;
     height: 120px;
@@ -75,19 +87,22 @@ body{
     justify-content: center;
 }
 
-.choiceOption:hover{
+/* Hover styles for the choice option */
+.choiceOption:hover {
     background-color: #6c4ca0;
     height: 155px;
     width: 155px;
 }
 
-.choiceOptionCenter:hover{
+/* Hover styles for the center of the choice option */
+.choiceOptionCenter:hover {
     background-color: #ac98cc;
     height: 125px;
     width: 125px;   
 }
 
-#scores{
+/* Styles for the scores */
+#scores {
     display: flex;
     flex-direction: row;
     width: 70px;
@@ -96,7 +111,8 @@ body{
     margin: -150px;
 }
 
-.icon{
+/* Styles for the icons */
+.icon {
     height: 80px;
     width: 80px;
 }
