@@ -16,6 +16,8 @@ return options[randomIndex];
 // Compares the player's choice with the computer's choice and displays the result
 function compareChoices(playerChoice) {
 
+//Generate random choice
+var computerChoice = randomChoice();
 
 // Get the selected images from the DOM
 var selectedImg = document.getElementById('selectedImg');

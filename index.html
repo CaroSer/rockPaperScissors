@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/JavaScript" src="script.js"></script>
 </head>
 <body>
+    <!-- Game title -->
     <h1 class="mainText">ROCK, PAPER, SCISSORS!</h1>
 
+    <!-- Container for the selected choices and scores -->
     <div id="selectedChoiceCont">
+        <!-- Player's selected choice -->
         <div class="selectedChoice">
             <div class="selectedChoiceCenter">
                 <div class="selectedChoiceIcon">
@@ -18,11 +22,13 @@
             </div>
         </div>
 
+        <!-- Scores -->
         <div id="scores" class="mainText">
             <div id="playerScore">0</div>
             <div id="computerScore">0</div>
         </div>
 
+        <!-- Computer's selected choice -->
         <div class="selectedChoice">
             <div class="selectedChoiceCenter">
                 <div class="selectedChoiceIcon">
@@ -32,17 +38,23 @@
         </div>
     </div>
 
+    <!-- Container for the choice options -->
     <div id="choiceOptionCont">
+        <!-- Rock option -->
         <button class="choiceOption" onclick="compareChoices('rock')">
             <div class="choiceOptionCenter">
                 <img class="icon" id="rock" src="img/rock.png">
             </div>
         </button>
+
+        <!-- Paper option -->
         <button class="choiceOption" onclick="compareChoices('paper')">
             <div class="choiceOptionCenter">
                 <img class="icon" id="paper" src="img/paper.png">
             </div>
         </button>
+
+        <!-- Scissors option -->
         <button class="choiceOption" onclick="compareChoices('scissors')">
             <div class="choiceOptionCenter">
                 <img class="icon" id="scissors" src="img/scissors.png">
@@ -50,6 +62,5 @@
         </button>
     </div>
 
-    <script type="text/JavaScript" src="script.js"></script>
 </body>
 </html>
